@@ -159,9 +159,4 @@ button {
 .main__button:hover {
   background-color: #A26539;
   color: #FFFFFF;
-}
-
-image {
-  -webkit-mask-image: url();
-          mask-image: url();
 }/*# sourceMappingURL=style.css.map */
