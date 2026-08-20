@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*Общие стили*/
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,15 @@ button {
   font-family: Montserrat Alternates;
 }
 
+.center {
+  width: 100%;
+  max-width: 1440px;
+  /* Ограничиваем ширину контента, чтобы на больших экранах не растягивалось */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Стили для header*/
 .header {
   background-color: #FFFFFF;
   display: flex;
@@ -18,6 +28,7 @@ button {
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  /*Фиксация header*/
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -90,24 +101,238 @@ button {
   text-transform: uppercase;
 }
 
+/*Стили основного экрана*/
+/*.main {
+    max-height: 770px;
+    background-color: #F6F5F4;
+    padding-top: 118px;
+    padding-left: 118px;
+    padding-bottom: 208px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+
+    &__text {
+        max-width: 586px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+
+        &-head {
+            font-family: Montserrat Alternates;
+            font-weight: 700;
+            font-style: Bold;
+            font-size: 48px;
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            color: #45403D;
+        }
+
+        &-slogan {
+            font-family: Montserrat Alternates;
+            font-weight: 600;
+            font-style: SemiBold;
+            font-size: 24px;
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            color: #45403D;
+        }
+
+        &-desc {
+            font-family: Montserrat Alternates;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 16px;
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            color: #45403D;
+        }
+    }
+
+    &__button {
+        font-family: Montserrat Alternates;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0px;
+        vertical-align: middle;
+        color: #A26539;
+        border-color: #A26539;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 24px;
+        text-decoration: none;
+        border: 1px solid #A26539;
+        padding: 16px 96.5px;
+
+        &:hover {
+            background-color: #A26539;
+            color: #FFFFFF;
+        }
+    }
+
+}*/
 .main {
-  max-height: 770px;
   background-color: #F6F5F4;
-  padding-top: 118px;
-  padding-left: 118px;
-  padding-bottom: 208px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 40px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  min-height: 770px;
 }
-.main__text {
+.main__text-wrapper {
+  flex: 1;
+  min-width: 300px;
   max-width: 586px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 24px;
+  padding-left: 118px;
+  padding-top: 118px;
+}
+.main {
+  /* Стили заголовков и кнопки (оставляем как было) */
 }
 .main__text-head {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.1;
+  color: #45403D;
+  margin-bottom: 20px;
+}
+.main__text-slogan {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #45403D;
+  margin-bottom: 30px;
+}
+.main__text-desc {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #45403D;
+  margin-bottom: 40px;
+}
+.main__button {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #A26539;
+  background-color: transparent;
+  border: 1px solid #A26539;
+  border-radius: 24px;
+  padding: 16px 36px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.main__button:hover {
+  background-color: #A26539;
+  color: #FFFFFF;
+}
+.main {
+  /* --- СТИЛИ ПОДНОСА (ГЛАВНОЕ ИЗМЕНЕНИЕ) --- */
+}
+.main__visuals {
+  flex: 1;
+  min-width: 330px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.main__tray {
+  position: relative;
+  /* Ключевое свойство: все элементы внутри будут позиционироваться относительно этого блока */
+  width: 100%;
+  max-width: 770px;
+  /* Ограничиваем ширину подноса */
+  aspect-ratio: 1;
+  /* Делаем поднос квадратным (или 16/9 если нужно прямоугольным) */
+  background-image: url("./images/main/tray-bg.png");
+  /* ВАШ ФОН-ПОДНОС */
+  background-size: contain;
+  /* Фон подстраивается под размер блока */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* --- СТИЛИ ЭЛЕМЕНТОВ НА ПОДНОСЕ --- */
+}
+.main__tray-item {
+  position: absolute;
+  /* Абсолютное позиционирование ВНУТРИ подноса */
+  width: 25%;
+  /* Базовый размер элемента (относительно подноса) */
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.main__tray-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+  /* Тень для объема */
+}
+.main__tray-coffee {
+  left: 0;
+  top: 1%;
+  width: 70%;
+  transition: transform 0.4s ease;
+}
+.main__tray-coffee:hover {
+  transform: rotate(-10deg) scale(1);
+  z-index: 0;
+}
+.main__tray-beans {
+  top: 7%;
+  right: 13%;
+  width: 35%;
+}
+.main__tray-cinnabon {
+  bottom: 5%;
+  right: 0%;
+  width: 60%;
+  transition: transform 0.4s ease;
+}
+.main__tray-cinnabon:hover {
+  transform: rotate(-10deg) scale(1);
+  z-index: 0;
+}
+.main__tray-cookie {
+  left: 3%;
+  width: 50%;
+  bottom: 0;
+  transition: transform 0.4s ease;
+}
+.main__tray-cookie:hover {
+  transform: rotate(-10deg) scale(1);
+  z-index: 0;
+}
+
+/*Стили блока "О нас"*/
+.us {
+  /*Текст шапки*/
+}
+.us-header {
+  padding-left: 120px;
+  padding-top: 64px;
+}
+.us-header__text {
   font-family: Montserrat Alternates;
   font-weight: 700;
   font-style: Bold;
@@ -118,7 +343,74 @@ button {
   vertical-align: middle;
   color: #45403D;
 }
-.main__text-slogan {
+.us {
+  /*Базовые стили для карточки*/
+}
+.us-cards {
+  max-width: 1200px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 48px;
+  padding-left: 120px;
+  padding-bottom: 64px;
+}
+.us-cards__descrip {
+  display: flex;
+  max-width: 584px;
+  max-height: 292px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  border-bottom-left-radius: 0;
+  overflow: hidden;
+  /* Важно: обрезает всё, что выходит за границы карточки */
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14);
+  font-family: Montserrat Alternates;
+}
+.us-cards {
+  /*Контейнер для изображения*/
+}
+.us-cards__image-wrapper {
+  overflow: hidden;
+  /* Обрезает увеличенное изображение по границам блока */
+  position: relative;
+}
+.us-cards {
+  /*Само изображение*/
+}
+.us-cards__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* Заполняет блок, не искажая пропорции */
+  transition: transform 0.5s ease;
+  /* Плавная анимация */
+  display: block;
+}
+.us-cards {
+  /*Эффект при наведении на карточку*/
+}
+.us-cards__descrip:hover .us-cards__image {
+  transform: scale(1.15);
+  /* Увеличение на 15% */
+}
+.us-cards {
+  /*Текстовый блок*/
+}
+.us-cards__content {
+  max-width: 292px;
+  max-height: 242px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.us-cards {
+  /*Заголовок*/
+}
+.us-cards__title {
   font-family: Montserrat Alternates;
   font-weight: 600;
   font-style: SemiBold;
@@ -129,104 +421,18 @@ button {
   vertical-align: middle;
   color: #45403D;
 }
-.main__text-desc {
+.us-cards {
+  /*Текст*/
+}
+.us-cards__text {
+  max-width: 252px;
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
-  font-size: 16px;
+  font-size: 14px;
   leading-trim: NONE;
   line-height: 100%;
-  letter-spacing: 0px;
+  letter-spacing: 4%;
   vertical-align: middle;
   color: #45403D;
-}
-.main__button {
-  font-family: Montserrat Alternates;
-  font-weight: 600;
-  font-style: SemiBold;
-  font-size: 16px;
-  leading-trim: NONE;
-  line-height: 100%;
-  letter-spacing: 0px;
-  vertical-align: middle;
-  color: #A26539;
-  border-color: #A26539;
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 24px;
-  text-decoration: none;
-  border: 1px solid #A26539;
-  padding: 16px 96.5px;
-}
-.main__button:hover {
-  background-color: #A26539;
-  color: #FFFFFF;
-}
-
-/* Базовые стили для карточки */
-.card {
-  display: flex;
-  max-width: 800px;
-  margin: 40px auto;
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden; /* Важно: обрезает всё, что выходит за границы карточки */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
-}
-
-/* Контейнер для изображения */
-.card-image-wrapper {
-  flex: 1;
-  overflow: hidden; /* Обрезает увеличенное изображение по границам блока */
-  position: relative;
-}
-
-/* Само изображение */
-.card-image {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover; /* Заполняет блок, не искажая пропорции */
-  transition: transform 0.5s ease; /* Плавная анимация */
-  display: block;
-}
-
-/* Эффект при наведении на карточку */
-.card:hover .card-image {
-  transform: scale(1.15); /* Увеличение на 15% */
-}
-
-/* Текстовый блок */
-.card-content {
-  flex: 1;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Заголовок */
-.card-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0 0 20px 0;
-  color: #333;
-}
-
-/* Текст */
-.card-text {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #555;
-  margin: 0 0 16px 0;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 600px) {
-  .card {
-    flex-direction: column;
-  }
-  .card-image-wrapper {
-    height: 250px;
-  }
 }/*# sourceMappingURL=style.css.map */

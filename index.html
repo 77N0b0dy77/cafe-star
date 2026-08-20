@@ -13,10 +13,10 @@
     <title>Document</title>
 </head>
 
-<body>
+<div>
     <!--Навигационное меню-->
     <header>
-        <div class="header">
+        <div class="header center">
             <a href="#" class="header__logo">ЗЕРНЫШКО</a>
             <div class="header__nav">
                 <a href="#" class="header__nav-text">О нас</a>
@@ -27,43 +27,102 @@
             </div>
         </div>
     </header>
+    
     <!--Главная страница-->
-    <div class="main">
-        <div class="main__text">
-            <h1 class="main__text-head">Добро пожаловать<br>в «Зернышко»</h1>
-            <h2 class="main__text-slogan">Ароматный кофе и уютная<br> атмосфера каждый день</h2>
-            <p class="main__text-desc">Мы готовим кофе с душой и верим, что каждая чашка —<br> это маленькое
-                наслаждение,
-                созданное для вас.<br><br>
-                Мы предлагаем свежие зерна, уникальные авторские<br> рецепты и заботу о природе. Наши бариста рады<br>
-                подарить
-                вам вкус и уют, из-за которых захочется<br> возвращаться снова и снова.</p>
-        </div>
+<div class="main center">
+    <!-- Левая колонка: Текст -->
+    <div class="main__text-wrapper">
+        <h1 class="main__text-head">Добро пожаловать<br>в «Зернышко»</h1>
+        <h2 class="main__text-slogan">Ароматный кофе и уютная атмосфера каждый день</h2>
+        <p class="main__text-desc">
+            Мы готовим кофе с душой и верим, что каждая чашка — это маленькое наслаждение, созданное для вас.
+            Мы предлагаем свежие зерна, уникальные авторские рецепты и заботу о природе. Наши бариста рады подарить вам вкус и уют, из-за которых захочется возвращаться снова и снова.
+        </p>
         <a href="" class="main__button">Посмотреть меню</a>
     </div>
-<img style="position: absolute; top: 119px; left: 617px; width: 825px; height: 720px;" src="./images/main/Mask group.png" alt="тарелка с маской">
-<img style="position: absolute; top: 150px; left: 1068px; width: 270px; height: 270px;" src="./images/main/зерна.png" alt="зерна">
-<img style="position: absolute; top: 100px; left: 655px; width: 540px; height: 540px;" src="./images/main/кофе.png" alt="кофе">
-<img style="position: absolute; top: 485px; left: 661px; width: 393px; height: 393px;" src="./images/main/печенье.png" alt="печенье">
-<img style="position: absolute; top: 270px; left: 915px; width: 570px; height: 570px;" src="./images/main/Синабон.png" alt="синабон">
 
-<section class="us">
-<div class="card">
-  <div class="card-image-wrapper">
-    <img src="./images/Us/" alt="Кофе в зёрнах" class="card-image">
-  </div>
-  <div class="card-content">
-    <h2 class="card-title">Свежее зерно</h2>
-    <p class="card-text">
-      Мы используем только свежие зерна и экспериментируем с оригинальными рецептами, чтобы радовать гостей уникальными вкусами.
-    </p>
-    <p class="card-text">
-      Наша команда сотрудничает с локальными обжарщиками, поддерживая высокое качество и разнообразие.
-    </p>
-  </div>
+    <!-- Правая колонка: Поднос с композицией -->
+    <div class="main__visuals">
+        <div class="main__tray">
+            <div class="main__tray-plate">
+            <img src="./images/main/тарелка с маской.png" alt="тарелка" class="main__tray-img">
+            </div>
+            <div class="main__tray-item main__tray-coffee">
+                <img src="./images/main/кофе.png" alt="Чашка кофе" class="main__tray-img">
+            </div>
+            <div class="main__tray-item main__tray-beans">
+                <img src="./images/main/зерна.png" alt="Кофейные зерна" class="main__tray-img">
+            </div>
+            <div class="main__tray-item main__tray-cinnabon">
+                <img src="./images/main/Синабон.png" alt="Синабон" class="main__tray-img">
+            </div>
+            <div class="main__tray-item main__tray-cookie">
+                <img src="./images/main/печенье.png" alt="Печенье" class="main__tray-img">
+            </div>
+
+        </div>
+    </div>
 </div>
+        <!--"О нас"-->
+    <section class="us center">
+        <div class="us-header">
+            <h1 class="us-header__text">О нас</h1>
+        </div>
+        <!--карточки блока "О нас"-->
+        <div class="us-cards">
+            <div class="us-cards__descrip">
+                <div class="us-cards__image-wrapper">
+                    <img src="./images/Us/история.png" alt="История" class="us-cards__image">
+                </div>
+                <div class="us-cards__content">
+                    <h2 class="us-cards__title">История</h2>
+                    <p class="us-cards__text">
+                        «Зернышко» — кофейня, которая родилась из любви к хорошему кофе и желания создать место уюта для
+                        каждого.<br><br>
+                        Открытая в 2020 году, кофейня быстро стала любимой как для ценителей кофе, так и для тех, кто
+                        просто ищет спокойное место для отдыха.
+                    </p>
+                </div>
+            </div>
+            <div class="us-cards__descrip">
+                <div class="us-cards__image-wrapper">
+                    <img src="./images/Us/философия.png" alt="Философия" class="us-cards__image">
+                </div>
+                <div class="us-cards__content">
+                    <h2 class="us-cards__title">Философия</h2>
+                    <p class="us-cards__text">Мы верим, что каждая чашка кофе — это особый момент.<br><br>
+                        Стремимся создать теплую дружелюбную атмосферу, где каждый гость чувствует себя как дома.<br><br>
+                        Наши бариста с заботой подходят к каждому заказу, создавая напитки с любовью и вниманием к
+                        деталям.
+                    </p>
+                </div>
+            </div>
+            <div class="us-cards__descrip">
+                <div class="us-cards__image-wrapper">
+                    <img src="./images/Us/зерна.png" alt="Свежее зерно" class="us-cards__image">
+                </div>
+                <div class="us-cards__content">
+                    <h2 class="us-cards__title">Свежее зерно</h2>
+                    <p class="us-cards__text">
+Мы используем только свежие зерна и экспериментируем с оригинальными рецептами, чтобы радовать гостей уникальными вкусами.<br><br> 
+Наша команда сотрудничает с локальными обжарщиками, поддерживая высокое качество и разнообразие.
+                    </p>
+                </div>
+            </div>
+            <div class="us-cards__descrip">
+                <div class="us-cards__image-wrapper">
+                    <img src="./images/Us/забдота.png" alt="Забота о природе" class="us-cards__image">
+                </div>
+                <div class="us-cards__content">
+                    <h2 class="us-cards__title">Забота о природе</h2>
+                    <p class="us-cards__text">Мы стараемся уменьшить экологический след, используя биоразлагаемые стаканчики и предлагая скидки для тех, кто приходит со своей чашкой.<br><br>
+Мы заботимся не только о клиентах, но и о планете.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>
 
 </body>
 
