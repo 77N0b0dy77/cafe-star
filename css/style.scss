@@ -405,7 +405,7 @@ img {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding: 40px 120px;
+            padding: 64px 120px 48px 120px;
         }
 
         &-btn {
@@ -444,7 +444,6 @@ img {
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 32px;
             max-width: 1200px;
-            margin: 0 auto;
         }
     }
 
@@ -537,6 +536,7 @@ img {
         &-content.active {
             display: block;
             padding-bottom: 64px;
+            padding-left: 120px;
         }
     }
 }
@@ -546,3 +546,255 @@ img {
     transform: scale(1.1);
     /* Увеличение на 10% */
 }
+
+/*Стили блока "Отзывы"*/
+
+.reviews {
+
+    &__header {
+        font-family: Montserrat Alternates;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 48px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0px;
+        vertical-align: middle;
+        color: #45403D;
+        padding: 64px 120px 48px 120px;
+    }
+
+    &__grid {
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 32px;
+        max-width: 1200px;
+    margin: 0 120px 64px;
+
+        &-card {
+            background-color: #FFFFFF;
+            max-width: 379px;
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 4px 20px #00000024;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Верхняя строка: Аватарка + Имя + Звезды */
+        &-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        &-avatar {
+            width: 63px;
+            height: 63px;
+            border-radius: 60px;
+            -o-object-fit: cover;
+            object-fit: cover;
+            background-color: #FFF;
+        }
+
+        &-avatar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &-name {
+            font-family: Montserrat Alternates;
+            font-weight: 600;
+            font-style: SemiBold;
+            font-size: 24px;
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            color: #45403D;
+        }
+
+        &-stars {
+            color: #FFD700;
+            font-size: 26px;
+            letter-spacing: 5px;
+        }
+
+        &-text {
+            font-family: Montserrat Alternates;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 14px;
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            color: #45403D;
+        }
+    }
+}
+
+
+
+:root {
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-main: #45403D;
+            --text-placeholder: #9A9A9A;
+            --accent-border: #dcdcdc;
+            --btn-text-color: #A6857A;
+            --btn-hover-bg: #f9f9f9;
+            --btn-hover-text: #45403D;
+        }
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 40px;
+        }
+
+        /* Сетка страницы */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* --- БЛОК КОНТАКТОВ --- */
+        .contacts-block {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s ease; /* Плавное изменение только цвета */
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            fill: var(--text-main);
+            transition: fill 0.3s ease;
+        }
+
+        /* ИСПРАВЛЕНИЕ 1: При наведении меняется ТОЛЬКО цвет текста и иконки */
+        .contact-item:hover {
+            color: var(--btn-text-color);
+        }
+        
+        .contact-item:hover .contact-icon {
+            fill: var(--btn-text-color);
+        }
+
+        /* --- БЛОК БРОНИРОВАНИЯ --- */
+        .booking-block {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .booking-block h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--accent-border);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 16px;
+            color: var(--text-main);
+            box-sizing: border-box;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: var(--text-placeholder);
+        }
+
+        /* Кнопка Забронировать */
+        .btn-book {
+            width: 100%;
+            padding: 16px;
+            background: transparent;
+            border: 1px solid var(--btn-text-color);
+            color: var(--btn-text-color);
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* ИСПРАВЛЕНИЕ 2: При наведении меняется фон и цвет текста */
+        .btn-book:hover {
+            background-color: var(--btn-hover-bg);
+            color: var(--btn-hover-text);
+        }
+
+        .btn-book:active {
+            transform: translateY(1px);
+        }
+
+        /* --- КАРТА (КОНТЕЙНЕР) --- */
+        .map-container {
+            background: #e0e0e0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            height: 450px;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }

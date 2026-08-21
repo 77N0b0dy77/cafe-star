@@ -20,3 +20,26 @@
                 }
             });
         }
+
+
+         ymaps.ready(init);
+
+function init() {
+            // !!! ВАЖНО: ЗАМЕНИТЕ КООРДИНАТЫ НИЖЕ НА РЕАЛЬНЫЕ ДЛЯ АДРЕСА "СПб, Коржекова, 5" !!!
+            var coords = [59.934280, 30.335098]; 
+
+            var myMap = new ymaps.Map("map", {
+                center: coords,
+                zoom: 16,
+                controls: ['zoomControl', 'fullscreenControl']
+            });
+
+            var myPlacemark = new ymaps.Placemark(coords, {
+                hintContent: 'Кофейня "Зернышко"',
+                balloonContent: 'СПб, Коржекова, 5'
+            }, {
+                preset: 'islands#redDotIcon' 
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
