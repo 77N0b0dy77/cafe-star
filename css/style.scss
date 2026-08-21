@@ -1,4 +1,5 @@
 /*Общие стили*/
+
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +17,13 @@ button {
     margin-right: auto;
 }
 
+/* Адаптив для картинки */
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /*Стили для header*/
 
 .header {
@@ -23,7 +31,7 @@ button {
     display: flex;
     flex-direction: row;
     column-gap: 352px;
-    padding: 40.5px 120px;
+    padding: 40.5px 0;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -45,6 +53,7 @@ button {
         text-transform: uppercase;
         color: #45403D;
         text-decoration: none;
+        padding-left: 120px;
     }
 
     &__nav {
@@ -54,6 +63,7 @@ button {
         flex-wrap: wrap;
         gap: 48px;
         align-items: center;
+        padding-right: 120px;
 
         &-text {
             font-family: Montserrat Alternates;
@@ -94,7 +104,6 @@ button {
     }
 }
 
-
 .logo {
     font-family: Montserrat Alternates;
     font-weight: 800;
@@ -108,84 +117,7 @@ button {
 }
 
 /*Стили основного экрана*/
-/*.main {
-    max-height: 770px;
-    background-color: #F6F5F4;
-    padding-top: 118px;
-    padding-left: 118px;
-    padding-bottom: 208px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
 
-    &__text {
-        max-width: 586px;
-        display: flex;
-        flex-direction: column;
-        row-gap: 24px;
-
-        &-head {
-            font-family: Montserrat Alternates;
-            font-weight: 700;
-            font-style: Bold;
-            font-size: 48px;
-            leading-trim: NONE;
-            line-height: 100%;
-            letter-spacing: 0px;
-            vertical-align: middle;
-            color: #45403D;
-        }
-
-        &-slogan {
-            font-family: Montserrat Alternates;
-            font-weight: 600;
-            font-style: SemiBold;
-            font-size: 24px;
-            leading-trim: NONE;
-            line-height: 100%;
-            letter-spacing: 0px;
-            vertical-align: middle;
-            color: #45403D;
-        }
-
-        &-desc {
-            font-family: Montserrat Alternates;
-            font-weight: 400;
-            font-style: Regular;
-            font-size: 16px;
-            leading-trim: NONE;
-            line-height: 100%;
-            letter-spacing: 0px;
-            vertical-align: middle;
-            color: #45403D;
-        }
-    }
-
-    &__button {
-        font-family: Montserrat Alternates;
-        font-weight: 600;
-        font-style: SemiBold;
-        font-size: 16px;
-        leading-trim: NONE;
-        line-height: 100%;
-        letter-spacing: 0px;
-        vertical-align: middle;
-        color: #A26539;
-        border-color: #A26539;
-        background-color: rgba(255, 255, 255, 0);
-        border-radius: 24px;
-        text-decoration: none;
-        border: 1px solid #A26539;
-        padding: 16px 96.5px;
-
-        &:hover {
-            background-color: #A26539;
-            color: #FFFFFF;
-        }
-    }
-
-}*/
 .main {
     background-color: #F6F5F4;
     display: flex;
@@ -251,7 +183,7 @@ button {
         }
     }
 
-    /* --- СТИЛИ ПОДНОСА (ГЛАВНОЕ ИЗМЕНЕНИЕ) --- */
+    /*Стили подноса*/
     &__visuals {
         flex: 1;
         min-width: 330px;
@@ -268,11 +200,8 @@ button {
         max-width: 770px;
         /* Ограничиваем ширину подноса */
         aspect-ratio: 1;
-        /* Делаем поднос квадратным (или 16/9 если нужно прямоугольным) */
         background-image: url('./images/main/tray-bg.png');
-        /* ВАШ ФОН-ПОДНОС */
         background-size: contain;
-        /* Фон подстраивается под размер блока */
         background-repeat: no-repeat;
         background-position: center;
         display: flex;
@@ -280,12 +209,10 @@ button {
         align-items: center;
         width: 100%;
 
-        /* --- СТИЛИ ЭЛЕМЕНТОВ НА ПОДНОСЕ --- */
+        /*Стили элементов на подносе*/
         &-item {
             position: absolute;
-            /* Абсолютное позиционирование ВНУТРИ подноса */
             width: 25%;
-            /* Базовый размер элемента (относительно подноса) */
             height: auto;
             display: flex;
             justify-content: center;
@@ -296,7 +223,6 @@ button {
             height: auto;
             display: block;
             filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
-            /* Тень для объема */
         }
 
         &-coffee {
@@ -450,4 +376,173 @@ button {
             color: #45403D;
         }
     }
+}
+
+
+/*Стили блока "Меню"*/
+
+.menu {
+
+    &__text {
+        font-family: Montserrat Alternates;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 48px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0px;
+        vertical-align: middle;
+        color: #45403D;
+    }
+
+    &__tab {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        &-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 120px;
+        }
+
+        &-btn {
+            font-family: Montserrat Alternates;
+            font-weight: 600;
+            font-style: SemiBold;
+            font-size: 14px;
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            color: #A26539;
+            width: 120px;
+            height: 45px;
+            border: 1px solid #A26539;
+            border-radius: 24px;
+            background-color: #FFFFFF;
+
+            &.active {
+                background-color: #A26539;
+                /* Коричневый цвет как на фото */
+                color: #FFFFFF;
+            }
+
+            &:hover:not(.active) {
+                background-color: #FFFFFF;
+            }
+        }
+    }
+
+    &__grid {
+
+        /* Сетка карточек */
+        &-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    }
+
+    /* Карточка товара */
+    &__product {
+
+        /* Контейнер карточки */
+        &-card {
+            width: 276px;
+            background-color: #FFFFFF;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px #00000024;
+            overflow: hidden;
+            font-family: 'Montserrat Alternates';
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__card {
+
+        /* Блок с изображением */
+        &-image-wrapper {
+            width: 100%;
+            height: 276px;
+            background-color: #DEDEDE;
+            overflow: hidden;
+            position: relative;
+            object-fit: cover;
+            /* Заполняет блок, не искажая пропорции */
+            transition: transform 0.4s ease;
+            /* Плавная анимация */
+            display: block;
+            /* Убирает лишние отступы у картинки */
+        }
+
+        /* Нижняя часть с информацией */
+        &-info {
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        &-price {
+            font-family: Montserrat Alternates;
+            font-weight: 600;
+            font-style: SemiBold;
+            font-size: 24px;
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            color: #45403D;
+        }
+
+        &-title {
+            font-family: Montserrat Alternates;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 14px;
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            color: #45403d;
+        }
+
+        &-volume {
+            font-family: Montserrat Alternates;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 14px;
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            color: #9A9A9A;
+        }
+    }
+
+    /* Скрываем неактивные секции */
+    &__section {
+
+        &-content {
+            display: none;
+        }
+
+        &-content.active {
+            display: block;
+            padding-bottom: 64px;
+        }
+    }
+}
+
+/* Эффект при наведении на карточку */
+.menu__product-card:hover .menu__card-image-wrapper img {
+    transform: scale(1.1);
+    /* Увеличение на 10% */
 }
