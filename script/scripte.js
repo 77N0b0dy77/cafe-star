@@ -26,7 +26,7 @@
 
 function init() {
             // !!! ВАЖНО: ЗАМЕНИТЕ КООРДИНАТЫ НИЖЕ НА РЕАЛЬНЫЕ ДЛЯ АДРЕСА "СПб, Коржекова, 5" !!!
-            var coords = [59.934280, 30.335098]; 
+            var coords = [59.938676, 30.314494]; 
 
             var myMap = new ymaps.Map("map", {
                 center: coords,

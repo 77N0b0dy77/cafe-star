@@ -15,6 +15,7 @@ button {
   /* Ограничиваем ширину контента, чтобы на больших экранах не растягивалось */
   margin-left: auto;
   margin-right: auto;
+  background-color: #F6F5F4;
 }
 
 /* Адаптив для картинки */
@@ -532,7 +533,7 @@ img {
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 32px;
   max-width: 1200px;
-  margin: 0 120px 64px;
+  padding: 0 120px 64px;
 }
 .reviews__grid-card {
   background-color: #FFFFFF;
@@ -593,166 +594,319 @@ img {
   color: #45403D;
 }
 
-:root {
-  --bg-color: #f4f4f4;
-  --card-bg: #ffffff;
-  --text-main: #45403D;
-  --text-placeholder: #9A9A9A;
-  --accent-border: #dcdcdc;
-  --btn-text-color: #A6857A;
-  --btn-hover-bg: #f9f9f9;
-  --btn-hover-text: #45403D;
-}
-
-.page-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-
-h1 {
-  font-size: 36px;
+.contacts__header {
+  font-family: Montserrat Alternates;
   font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 40px;
+  font-style: Bold;
+  font-size: 48px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #45403D;
+  padding: 64px 120px 48px 120px;
 }
 
 /* Сетка страницы */
-.main-grid {
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 40px;
-  align-items: start;
+.contacts__grid {
+  display: flex;
+  -moz-column-gap: 32px;
+  column-gap: 32px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 63px;
+  padding-left: 120px;
 }
 
 /* --- БЛОК КОНТАКТОВ --- */
-.contacts-block {
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  margin-bottom: 20px;
+.contacts__grid-position {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.section-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: var(--text-main);
+.contacts__grid-left {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-left: 120px;
 }
 
-.contact-item {
+.contacts__grid-block {
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1411764706);
+  min-width: 379px;
+  max-height: 181px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Контейнер карточки (белый блок с закруглением) */
+.contacts-wrapper {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1411764706);
+  min-width: 379px;
+  max-height: 181px;
+  padding-bottom: 20px;
+}
+
+/* Заголовок "Контакты" */
+.contacts__grid-header {
+  font-family: Montserrat Alternates;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #45403D;
+  padding: 20px 0 24px 20px;
+}
+
+/* Контейнер списка контактов */
+.contacts__grid-title {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  /* Расстояние между контактами */
+  padding-left: 20px;
+}
+
+/* Общий стиль для элемента контакта */
+.contacts__grid-item {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
-  color: var(--text-main);
+  gap: 10px;
   text-decoration: none;
-  transition: color 0.3s ease; /* Плавное изменение только цвета */
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.contact-item:last-child {
-  margin-bottom: 0;
-}
-
-.contact-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 12px;
-  fill: var(--text-main);
-  transition: fill 0.3s ease;
-}
-
-/* ИСПРАВЛЕНИЕ 1: При наведении меняется ТОЛЬКО цвет текста и иконки */
-.contact-item:hover {
-  color: var(--btn-text-color);
-}
-
-.contact-item:hover .contact-icon {
-  fill: var(--btn-text-color);
-}
-
-/* --- БЛОК БРОНИРОВАНИЯ --- */
-.booking-block {
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.booking-block h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 24px;
-  color: var(--text-main);
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: var(--text-main);
-}
-
-input, textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1px solid var(--accent-border);
-  border-radius: 12px;
-  font-family: inherit;
-  font-size: 16px;
-  color: var(--text-main);
-  box-sizing: border-box;
-}
-
-input::-moz-placeholder, textarea::-moz-placeholder {
-  color: var(--text-placeholder);
-}
-
-input::placeholder, textarea::placeholder {
-  color: var(--text-placeholder);
-}
-
-/* Кнопка Забронировать */
-.btn-book {
-  width: 100%;
-  padding: 16px;
-  background: transparent;
-  border: 1px solid var(--btn-text-color);
-  color: var(--btn-text-color);
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 500;
-  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
+  position: relative;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 100%;
+  vertical-align: middle;
+  color: #45403D;
 }
 
-/* ИСПРАВЛЕНИЕ 2: При наведении меняется фон и цвет текста */
-.btn-book:hover {
-  background-color: var(--btn-hover-bg);
-  color: var(--btn-hover-text);
+/* --- ЭФФЕКТ ПРИ НАВЕДЕНИИ --- */
+.contacts__grid-item:hover {
+  color: #A26539;
 }
 
-.btn-book:active {
-  transform: translateY(1px);
+.contacts__grid-item:hover svg {
+  fill: #A26539;
+}
+
+/* Контейнер формы */
+.booking-form-wrapper {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 20px;
+  max-width: 379px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1411764706);
+}
+
+/* Заголовок формы */
+.booking-form__title {
+  font-family: Montserrat Alternates;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #45403D;
+  margin: 0 0 24px 0;
+}
+
+/* Сетка для полей ввода */
+.booking-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* Стили для полей ввода (input и textarea) */
+.booking-input {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #45403D;
+  padding: 14px 0 16px 24px;
+  border: 1px solid #DEDEDE;
+  border-radius: 24px;
+}
+
+/* Цвет текста при вводе данных (или фокусе) */
+.booking-input:not(:-moz-placeholder) {
+  color: #45403D;
+  border-color: #d0d0d0;
+  outline: none;
+}
+.booking-input:focus,
+.booking-input:not(:placeholder-shown) {
+  color: #45403D;
+  border-color: #d0d0d0;
+  outline: none;
+}
+
+/* Поле для комментария (textarea) */
+.booking-input[type=textarea] {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Кнопка бронирования */
+.booking-btn {
+  width: 100%;
+  padding: 14px 0 16px 0;
+  border-radius: 24px;
+  border: 1px solid #A26539;
+  background-color: transparent;
+  color: #A26539;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+/* Эффект при наведении на кнопку */
+.booking-btn:hover {
+  background-color: #A26539;
+  color: #FFFFFF;
 }
 
 /* --- КАРТА (КОНТЕЙНЕР) --- */
-.map-container {
-  background: #e0e0e0;
-  border-radius: 20px;
+.contacts__grid-map-container {
+  background: #DEDEDE;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  height: 450px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1411764706);
+  height: 514px;
+  width: 789px;
 }
 
 #map {
   width: 100%;
   height: 100%;
+}
+
+/* Стили футера */
+.site-footer {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-width: 1200px;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 0 120px;
+}
+
+/* Логотип / Название */
+.footer-brand {
+  padding: 43px 0;
+}
+
+.footer-brand__header {
+  font-family: Montserrat Alternates;
+  font-weight: 800;
+  font-style: ExtraBold;
+  font-size: 32px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #45403D;
+  padding-bottom: 14px;
+}
+
+.footer-copyright {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #9A9A9A;
+}
+
+/* Меню навигации */
+.footer-nav {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  /* Расстояние между пунктами меню как на картинке */
+  font-family: Montserrat Alternates;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #45403D;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Блок соцсетей и разделителя */
+.footer-socials-wrapper {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+}
+
+.social-link {
+  display: block;
+  width: 14PX;
+  height: 14PX;
+  fill: #45403D;
 }/*# sourceMappingURL=style.css.map */
